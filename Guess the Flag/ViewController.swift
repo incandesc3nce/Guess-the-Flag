@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         var title: String
         var message: String
         
+        answeredQuestions += 1
         if sender.tag == correctAnswer {
             title = "Correct!"
             score += 1
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
             score -= 1
             message = "That was \(countries[sender.tag].capitalized) \n Your score is \(score) \n You answered \(answeredQuestions)/10 questions"
         }
-        answeredQuestions += 1
+        
         
         let ac = UIAlertController(title: title, message: message , preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
